@@ -3,12 +3,12 @@ name: Build and Push Docker Image to ECR
 on:
   push:
     branches:
-      - main 
+      - main
 
 jobs:
   build-and-push:
-    runs-on: ubuntu
-    
+    runs-on: ubuntu-20.04 # Specify the version of Ubuntu
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
