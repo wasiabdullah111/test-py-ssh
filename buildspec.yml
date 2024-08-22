@@ -8,7 +8,7 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - echo Building the Docker image....          
+      - echo Building the Docker image.....          
       - docker build -t pyimages:latest .
       - docker tag pyimages:latest 905418420578.dkr.ecr.us-east-1.amazonaws.com/pyimages:latest      
 
