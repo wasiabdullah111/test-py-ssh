@@ -25,7 +25,7 @@ def hello_world():
     </head>
     <body>
         <div class="content">
-            Hello,  Python app
+            welcome,  Python app
         </div>
     </body>
     </html>
