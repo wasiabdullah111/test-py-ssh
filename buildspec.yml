@@ -14,7 +14,7 @@ phases:
 
   post-build:
     commands:
-      - echo Build completed on `date`
+      - echo Build completed. on `date`
       - echo Pushing the Docker image...
       - docker push 905418420578.dkr.ecr.us-east-1.amazonaws.com/pyimages:latest
 
