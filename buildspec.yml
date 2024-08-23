@@ -18,3 +18,8 @@ phases:
       - echo Build completed on `date`
       - echo Pushing the Docker image....
       - docker push 905418420578.dkr.ecr.us-east-1.amazonaws.com/pyimages:latest
+      - echo '[ { "name": "wa-con-final", "imageUri": "905418420578.dkr.ecr.us-east-1.amazonaws.com/pyimages:latest" } ]' > imagedefinitions.json
+
+artifacts:
+  files:
+    - imagedefinitions.json
