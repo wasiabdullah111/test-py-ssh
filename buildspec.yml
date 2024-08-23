@@ -18,8 +18,5 @@ phases:
       - echo Build completed on `date`
       - echo Pushing the Docker image....
       - docker push 905418420578.dkr.ecr.us-east-1.amazonaws.com/pyimages:latest
-     # - echo '[{ "name": "container-name", "imageUri": "905418420578.dkr.ecr.us-east-1.amazonaws.com/pyimages:latest"}]' > imagedefinition.json
-      
-artifacts:
-  files:
-    - imagedefinition.json
+      - echo Updating ECS service...
+      - aws ecs update-service --cluster wa-cluster-final --service wasi-service --region us-east-1 --force-new-deployment
