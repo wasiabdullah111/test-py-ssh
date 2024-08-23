@@ -9,7 +9,7 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - echo Building the Docker image......
+      - echo Building the Docker image.....
       - docker build -t pyimages:latest .
       - docker tag pyimages:latest 905418420578.dkr.ecr.us-east-1.amazonaws.com/pyimages:latest      
 
@@ -18,8 +18,8 @@ phases:
       - echo Build completed on `date`
       - echo Pushing the Docker image....
       - docker push 905418420578.dkr.ecr.us-east-1.amazonaws.com/pyimages:latest
-      - echo '[ { "name": "wa-con-final", "imageUri": "905418420578.dkr.ecr.us-east-1.amazonaws.com/pyimages:latest" } ]' > imagedefinitions.json
-
+     # - echo '[{ "name": "container-name", "imageUri": "905418420578.dkr.ecr.us-east-1.amazonaws.com/pyimages:latest"}]' > imagedefinition.json
+      
 artifacts:
   files:
-    - imagedefinitions.json
+    - imagedefinition.json
