@@ -5,24 +5,19 @@ phases:
     commands:
       - echo Logging in to Amazon ECR...
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 905418420578.dkr.ecr.us-east-1.amazonaws.com
+
       - echo Logging in to Docker Hub...
       - echo wasi55555 | docker login --username wasiabdullah111 --password-stdin
 
   build:
     commands:
       - echo Build started on `date`
-      - echo Building the Docker image.....
+      - echo Building the Docker image.123
       - docker build -t pyimages:latest .
       - docker tag pyimages:latest 905418420578.dkr.ecr.us-east-1.amazonaws.com/pyimages:latest      
 
   post_build:
     commands:
       - echo Build completed on `date`
-      - echo Pushing the Docker image...
+      - echo Pushing the Docker image..
       - docker push 905418420578.dkr.ecr.us-east-1.amazonaws.com/pyimages:latest
-      - echo Creating image definition file...
-      - echo "name": "container-name", "imageUri": "905418420578.dkr.ecr.us-east-1.amazonaws.com/pyimages:latest"  > imagedefinition.json
-
-artifacts:
-  files:
-    - imagedefinition.json
