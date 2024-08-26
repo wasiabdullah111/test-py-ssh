@@ -25,7 +25,7 @@ def hello_world():
     </head>
     <body>
         <div class="content">
-            welcome, here....!!!
+            Bye Bye....!!!
         </div>
     </body>
     </html>
