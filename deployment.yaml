@@ -17,9 +17,7 @@ spec:
         image: 905418420578.dkr.ecr.us-east-1.amazonaws.com/wa-ecr-repo:latest  # Replace with your ECR image URI
         ports:
         - containerPort: 5000  # Change based on your app's exposed port
-        env:
-        - name: APP_ENV
-          value: "production"
+
 ---
 apiVersion: v1
 kind: Service
